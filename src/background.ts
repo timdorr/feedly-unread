@@ -1,7 +1,15 @@
-import browser from "webextension-polyfill";
+import browser from 'webextension-polyfill'
 
-console.log("Hello from the background!");
+const action = browser.action || browser.browserAction
 
-browser.runtime.onInstalled.addListener((details) => {
-  console.log("Extension installed:", details);
-});
+action.setPopup({ popup: '' })
+
+action.onClicked.addListener(async () => {
+  const tabs = await browser.tabs.query({ url: 'https://feedly.com/*' })
+  if (tabs.length < 1) {
+    browser.tabs.create({ url: 'https://feedly.com/' })
+  } else {
+    browser.tabs.update(tabs[0].id, { active: true })
+    browser.tabs.reload(tabs[0].id)
+  }
+})

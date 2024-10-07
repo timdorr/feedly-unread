@@ -6,6 +6,9 @@
     "48": "icon/48.png",
     "128": "icon/128.png"
   },
+  "{{chrome}}.permissions": ["tabs"],
+  "{{chrome}}.host_permissions": ["https://feedly.com/"],
+  "{{firefox}}.permissions": ["tabs", "https://feedly.com"],
   "{{chrome}}.action": {
     "default_popup": "src/popup.html"
   },
