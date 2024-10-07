@@ -16,8 +16,9 @@ export default defineConfig({
   plugins: [
     webExtension({
       disableAutoLaunch: true,
+      browser: process.env.TARGET || 'chrome',
       manifest: generateManifest,
-      watchFilePaths: ['package.json', 'manifest.json']
+      watchFilePaths: ['package.json', 'src/manifest.json']
     })
   ]
 })
