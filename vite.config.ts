@@ -5,8 +5,8 @@ function generateManifest() {
   const manifest = readJsonFile('src/manifest.json')
   const pkg = readJsonFile('package.json')
   return {
-    name: pkg.name,
-    description: pkg.description,
+    name: 'Feedly Unread',
+    description: 'Monitor your unread article count on Feedly',
     version: pkg.version,
     ...manifest
   }
