@@ -20,9 +20,13 @@ async function updateBadgeCount() {
     (count: { id: string }) => count.id.endsWith('/category/global.all')
   )
 
-  action.setBadgeBackgroundColor({ color: '#F00' })
-  action.setBadgeTextColor({ color: '#FFF' })
-  action.setBadgeText({ text: unread.count.toString() })
+  if (unread.count > 0) {
+    action.setBadgeBackgroundColor({ color: '#F00' })
+    action.setBadgeTextColor({ color: '#FFF' })
+    action.setBadgeText({ text: unread.count.toString() })
+  } else {
+    action.setBadgeText({ text: '' })
+  }
 }
 
 const action = browser.action || browser.browserAction
