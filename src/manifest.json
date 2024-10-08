@@ -6,9 +6,9 @@
     "48": "icon/48.png",
     "128": "icon/128.png"
   },
-  "{{chrome}}.permissions": ["tabs"],
+  "{{chrome}}.permissions": ["tabs", "storage"],
   "{{chrome}}.host_permissions": ["https://feedly.com/"],
-  "{{firefox}}.permissions": ["tabs", "https://feedly.com"],
+  "{{firefox}}.permissions": ["tabs", "storage", "https://feedly.com"],
   "{{chrome}}.action": {
     "default_popup": "src/popup.html"
   },
@@ -18,5 +18,8 @@
   "background": {
     "{{chrome}}.service_worker": "src/background.ts",
     "{{firefox}}.scripts": ["src/background.ts"]
-  }
+  },
+  "content_scripts": [
+    { "js": ["src/content.ts"], "matches": ["https://*.feedly.com/*"] }
+  ]
 }
