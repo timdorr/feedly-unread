@@ -3,5 +3,8 @@ node_modules
 dist
 extension.zip
 
+docs/.vitepress/dist
+docs/.vitepress/cache
+
 *.log
 *.local

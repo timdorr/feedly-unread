@@ -7,7 +7,8 @@
     "compile": "tsc --noEmit",
     "dev": "vite",
     "build": "vite build",
-    "publish": "tsx publish.ts"
+    "publish": "tsx publish.ts",
+    "docs": "vitepress build docs"
   },
   "devDependencies": {
     "@types/webextension-polyfill": "^0.12.1",
@@ -15,6 +16,7 @@
     "typescript": "^5.6.2",
     "vite": "^5.4.8",
     "vite-plugin-web-extension": "^4.2.0",
+    "vitepress": "^1.5.0",
     "webextension-polyfill": "^0.12.0",
     "zip-a-folder": "^3.1.8"
   }
